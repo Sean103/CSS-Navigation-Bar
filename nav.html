@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=da, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航条</title>
+    <style>
+     * {
+        margin:0;
+        padding:0;
+     }
+     a {
+         color:#333;
+         text-decoration: none;
+     }   
+     ul {
+         list-style:none;
+     }
+     nav {
+         width:500px;
+         margin:10px auto 0;
+         box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.3)
+     }
+     nav::after {
+         content:'';
+         display:block;
+         clear:both;
+     }                       /*清除浮动*/
+     nav>ul>li {
+         position: relative;
+         float: left;
+     }
+     nav>ul>li:hover .child {
+         display: block;
+     }                     /*让隐藏的child通过点击li展现出来*/
+     nav a {
+         display:block;
+         padding:10px 10px;
+         min-width: 50px;
+     }
+     nav a:hover {
+         color:#fff;
+         background: rgba(0,0,0,0.4);
+     }
+     nav .child {
+         position:absolute;
+         top: 100%;
+         box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.3);
+         display: none;    /*隐藏child*/
+
+
+     }
+
+    </style>
+</head>
+<body>
+  <nav>
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">作品</a></li>
+        <li>
+            <a href="#">更多</a>
+            <ul class="child">
+                <li><a href="#">前端</a></li>
+                <li><a href="#">后端</a></li>
+                <li><a href="#">移动端</a></li>
+            </ul>
+        </li>
+    </ul>
+  </nav>
+</body>
+</html>
